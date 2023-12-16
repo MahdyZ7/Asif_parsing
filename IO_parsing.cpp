@@ -72,7 +72,7 @@ void findAndReplaceFill(std::string infile, bool replace)
 			std::cout << RED << " Error: Could not rename file \"" << outfile << "\"" << RESETCLR<< std::endl;
 		}
 	}
-	std::cout << GREEN <<" Done with file \"" << infile << "\" \n";
+	std::cout << GREEN <<" Done with file \"" << infile << "\" \n" << RESETCLR;
 }
 
 void replaceFill(std::ifstream &inputfile, std::ofstream &outputfile)

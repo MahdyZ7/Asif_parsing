@@ -1,6 +1,7 @@
-*.def
 .vscode
 *.o
 fillparsing
 *.txt
 .ccls*
+.replit
+replit.nix

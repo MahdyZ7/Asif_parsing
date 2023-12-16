@@ -14,9 +14,10 @@ END DESIGN
 ### How to install the program
 run the following command:
 ```
-./install
+make install
 ```
 This will add the program to your PATH so you can run it from anywhere
+you only need to run this command once
 
 ### How to run the program
 

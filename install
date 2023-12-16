@@ -9,9 +9,5 @@ else
 	echo "export PATH=$PWD:\$PATH" | tee -a ~/.zshrc
 	if [[ $(SHELL) == *"/bin/bash"* ]]; then
 		source ~/.bashrc
-	elif [[ $(SHELL) == *"/bin/zsh"* ]]; then
-		source ~/.zshrc
-	else
-		source ~/.cshrc
 	fi
 fi

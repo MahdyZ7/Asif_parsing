@@ -25,4 +25,4 @@ fclean: clean
 re : fclean all
 
 install:
-	bash install.sh
+	bash fill_install.sh

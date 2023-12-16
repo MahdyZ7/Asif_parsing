@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
 
 void findAndReplaceFill(std::string infile, bool replace)
 {
-	std::string outfile = std::string("orderd_") + infile;
+	std::string outfile = std::string("ordered_").append(infile);
 	std::ifstream inputfile(infile.c_str());
 	if (!inputfile.is_open())
 	{
@@ -51,7 +51,7 @@ void findAndReplaceFill(std::string infile, bool replace)
 		return;
 	}
 	
-	std::ofstream outputfile(std::string("ordered_") + infile);
+	std::ofstream outputfile(outfile);
 	if (!outputfile.is_open())
 	{
 		inputfile.close();
@@ -61,16 +61,15 @@ void findAndReplaceFill(std::string infile, bool replace)
 	}
 
 	replaceFill(inputfile, outputfile);
-
 	inputfile.close();
 	outputfile.close();
 	if (replace)
 	{
-		// std::remove(infile.c_str());
-		if (rename(outfile.c_str(), infile.c_str()) != 0)
+		std::remove(infile.c_str());
+		if (rename(outfile.c_str() ,infile.c_str() ) != 0)
 		{
-			 perror("Error renaming file");
-			std::cout << RED << " Error: Could not rename file \"" << infile.c_str() << "\"" << RESETCLR<< std::endl;
+			perror("Error renaming file");
+			std::cout << RED << " Error: Could not rename file \"" << outfile << "\"" << RESETCLR<< std::endl;
 		}
 	}
 	std::cout << GREEN <<" Done with file \"" << infile << "\" \n";

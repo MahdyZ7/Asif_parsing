@@ -93,6 +93,13 @@ void replaceFill(std::ifstream &inputfile, std::ofstream &outputfile)
 		else
 			outputfile << line << std::endl;
 	}
+	if (!fill_lines.empty())
+	{
+		for (const auto &p : fill_lines)
+			outputLines(outputfile, p.second);
+		fill_lines.clear();
+		std::cerr << RED << " Error: Missing END COMPONENTS in file" << RESETCLR<< std::endl;
+	}
 }
 
 std::string getFillName(std::string line)
